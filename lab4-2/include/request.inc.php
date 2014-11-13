@@ -11,6 +11,4 @@ function printSinTable()
         echo $table;
     }
 
-
-
 ?>
