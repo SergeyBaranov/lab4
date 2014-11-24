@@ -1,30 +1,13 @@
 <?php
-function getSinTable($degreestep = 10, $minutesstep = 6)
-{
-    $html = "";
-    for ($degree = 0; $degree <= 360; $degree += $degreestep)
+
+function printSinTable()
     {
-        $html .= '<tr>' ;
-        $html .= '<td class="degree">' . $degree . '</td>';
-        for ($Minutes = 0; $Minutes <= 60; $Minutes += $minutesstep)
-        {
-            $sin = sin($degree + $Minutes/60);
-            $html .= "<td> {$sin} </td>";
-        }
-        $html .= '</tr>';
+        $degreestep = isset($_GET['degree']) ? $_GET['degree'] : 10;
+        $minutesstep = isset($_GET['Minutes']) ? $_GET['Minutes'] : 10;
+        $table = "<table>";
+        $table .= getSinTableHead($minutesstep);
+        $table .= getSinTable($degreestep, $minutesstep);
+        $table .= "</table>";
+        echo $table;
     }
-    return $html;
-}
-
-function getSinTableHead($minutesstep = 6)
-{   
-    $html = '<tr><th>Degrees\Minutes</th>';
-    for ($Minutes = 0; $Minutes <= 60; $Minutes += $minutesstep){
-            $html .= "<th class=\"degree\">$Minutes</th>";
-        }
-    $html .= '</tr>';
-	
-    return  $html;
-}
-
-?>
+    

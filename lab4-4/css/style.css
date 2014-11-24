@@ -1,0 +1,41 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper
+{
+	width: 1000px;
+	height: auto;
+	margin: 0 auto;
+}
+
+.header
+{
+	height: 100px;
+	background: #CCCCFF;
+}
+
+.sidebar
+{
+	background: #CCFFCC;
+	height: 500px;
+	float: left;
+	width: 200px;
+}
+
+.content
+{
+	background: #FFFFCC;
+	height: 500px;
+	float: right;
+	width: 800px;
+}
+
+.footer
+{
+	background: #CCCCFF;
+	height: 100px;
+	clear: both;
+}
